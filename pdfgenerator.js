@@ -211,6 +211,22 @@ function getSpecularDetectionReportTemplate(app, url) {
 }
 
 /**
+ * @description 解决 ElementUI 样式丢失bug
+ * @param {Object} app 服务对象
+ * @param {String} url 服务地址
+ */
+function getAnalyzerElementUICSS(app, url) {
+    app.get(url, (request, response) => {
+        try {
+            const elementUICSS = fs.readFileSync(path.join(serverConfig.viewsPath, 'Analyzer/elementUI.html'));
+            response.send(elementUICSS.toString());
+        } catch(err) {
+            logger.error(err);
+        }
+    })
+}
+
+/**
  * @description 通用接口-转换HTML模板为PDF
  * @param {Object} app 服务对象
  * @param {String} url 服务地址
@@ -264,3 +280,4 @@ async function convertHTMLToPDF(app, url) {
 const app = createServer(express);
 convertHTMLToPDF(app, '/v1/pdfgenerator/point_graph');
 getSpecularDetectionReportTemplate(app, '/v1/pdfgenerator/get_template');
+getAnalyzerElementUICSS(app, '/v1/pdfgenerator/get_elementui_css');
