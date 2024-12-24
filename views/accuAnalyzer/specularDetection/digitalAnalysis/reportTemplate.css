@@ -16235,7 +16235,7 @@ body[data-v-35736a9c] {
 
 .reportTitle[data-v-35736a9c] {
   text-align: center;
-  margin: 0.364583rem 0px 1.04167rem;
+  margin: 0 0 0.520833rem;
 }
 
 .report-pdf[data-v-35736a9c] {
@@ -16260,7 +16260,6 @@ body[data-v-35736a9c] {
 }
 
 .mainPage[data-v-35736a9c] {
-  margin-top: 0.520833rem;
   width: 100%;
   padding: 0.260417rem;
 }
@@ -16279,7 +16278,7 @@ body[data-v-35736a9c] {
 .mainImage[data-v-35736a9c] {
   position: relative;
   width: 100%;
-  height: 14.6875rem;
+  height: 31.770833rem;
   margin-top: 0.520833rem;
   margin-bottom: 0.520833rem;
   background: rgb(234, 235, 239) !important;
@@ -16333,14 +16332,13 @@ body[data-v-35736a9c] {
 .tableAbove[data-v-35736a9c],
 .table2[data-v-35736a9c] {
   width: 100%;
-  margin-bottom: 1.24167rem;
+  margin-bottom: 1.5625rem;
   border-collapse: collapse;
 }
 
 .tableBelowWrapper[data-v-35736a9c] {
   font-size: 0.520833rem;
   width: 100%;
-  overflow-x: auto;
 }
 
 .tableBelow[data-v-35736a9c] {
@@ -16395,13 +16393,13 @@ body[data-v-35736a9c] {
 .tableItem[data-v-35736a9c] {
   font-size: 0.520833rem;
   text-align: center;
-  height: 3.125rem;
+  height: 3.229167rem;
   line-height: 3.125rem;
   border-right: 0.052083rem solid rgb(195, 197, 199);
 }
 
 .tableItemMore[data-v-35736a9c] {
-  border-top: 0.052083rem solid rgb(195, 197, 199);
+  /*border-top: 0.052083rem solid rgb(195, 197, 199);*/
   margin-top: -0.052083rem;
 }
 
@@ -16428,9 +16426,6 @@ body[data-v-35736a9c] {
   height: 98%;
 }
 
-.reflectance[data-v-35736a9c] {
-  width: 3.64583rem;
-}
 
 .rating[data-v-35736a9c] {
   width: 3.64583rem;
@@ -16447,7 +16442,6 @@ body[data-v-35736a9c] {
 .type-wrap[data-v-35736a9c] {
   word-break: break-word;
   font-size: 0.520833rem;
-  height: 3.125rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16483,7 +16477,7 @@ body[data-v-35736a9c] {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3.64583rem;
+  width: 4.375rem;
   font-size: 0.520833rem;
   border-right: 0.052083rem solid rgb(195, 197, 199);
 }
@@ -16549,15 +16543,13 @@ body[data-v-35736a9c] {
 
 .leftImg4[data-v-35736a9c] {
   position: absolute;
-  top: 0.3125rem;
-  left: 5.98958rem;
+  left: 0;
   width: 4.6875rem;
   height: 9.375rem;
 }
 
 .topImg4[data-v-35736a9c] {
   position: absolute;
-  top: 0.3125rem;
   left: 50%;
   transform: translateX(-50%);
   width: 4.6875rem;
@@ -16566,15 +16558,17 @@ body[data-v-35736a9c] {
 
 .rightImg4[data-v-35736a9c] {
   position: absolute;
-  top: 0.3125rem;
-  right: 5.98958rem;
+  right: 5.885417rem;
   width: 4.6875rem;
   height: 9.375rem;
 }
-
+.point-num {
+  scale: calc(1 / 2.25);
+  transform-origin: left top;
+}
 .rearImg4[data-v-35736a9c] {
   position: absolute;
-  bottom: 0.260417rem;
+  bottom: 5.989583rem;
   left: 50%;
   transform: translateX(-50%);
   width: 4.6875rem;
@@ -16619,6 +16613,17 @@ body[data-v-35736a9c] {
   height: 100%;
 }
 
+.leftImg4 ,
+.topImg4 ,
+.rightImg4,
+.rearImg4,
+.leftImg3,
+.topImg3,
+.rightImg3 {
+  scale: 2.25;
+  transform-origin: left top;
+}
+
 .leftImg4 .default-pic[data-v-35736a9c],
 .topImg4 .default-pic[data-v-35736a9c],
 .rightImg4 .default-pic[data-v-35736a9c],
@@ -16638,8 +16643,14 @@ body[data-v-35736a9c] {
 }
 
 .defect-point {
-  width: 3px!important;
-  height: 3px!important;
+  width: 1.041667rem;
+  height: 1.041667rem;
+  font-size: 0.520833rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scale: 0.5;
+  transform-origin: top left;
   border-radius: 50%;
   margin-right: 0.052083rem;
 }

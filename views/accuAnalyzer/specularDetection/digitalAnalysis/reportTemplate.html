@@ -20,7 +20,7 @@
         </div>
       </header>
       <div data-v-35736a9c="" id="reportTitleCn" class="reportTitle">检测报告</div>
-      <table data-v-35736a9c="" class="table1" style="margin-bottom: 17px;">
+      <table data-v-35736a9c="" class="table1">
         <tr data-v-35736a9c="">
           <td data-v-35736a9c="" class="itemName">时间</td>
           <td data-v-35736a9c="" id="time" class="itemContent">{{Time}}</td>
@@ -39,6 +39,12 @@
           <td data-v-35736a9c="" class="itemName">喷涂次数</td>
           <td data-v-35736a9c="" class="itemContent">1</td>
         </tr>
+        <tr data-v-35736a9c="">
+          <td data-v-35736a9c="" class="itemName">双色车</td>
+          <td data-v-35736a9c="" id="VIN" class="itemContent"></td>
+          <td data-v-35736a9c="" class="itemName"></td>
+          <td data-v-35736a9c="" class="itemContent"></td>
+        </tr>
       </table>
       <div data-v-35736a9c="" id="mainImgWrapper" class="mainImage">
         <div data-v-35736a9c="">
@@ -48,8 +54,7 @@
               {{each points.leftPoints}}
               <div data-v-35736a9c="" class="points" style="top: {{$value.style.top}}; left: {{$value.style.left}};">
                 <span data-v-35736a9c="" class="defect-point"
-                  style="background-color: {{$value.style.backgroundColor}};"></span><span style="font-weight: 400;"
-                  data-v-35736a9c="">{{$value.ID + 1}}</span>
+                  style="background-color: {{$value.style.backgroundColor}};">{{$value.ID + 1}}</span>
               </div>
               {{/each}}
             </div>
@@ -60,8 +65,7 @@
               {{each points.topPoints}}
               <div data-v-35736a9c="" class="points" style="top: {{$value.style.top}}; left: {{$value.style.left}};">
                 <span data-v-35736a9c="" class="defect-point"
-                  style="background-color: {{$value.style.backgroundColor}};"></span><span style="font-weight: 400;"
-                  data-v-35736a9c="">{{$value.ID + 1}}</span>
+                  style="background-color: {{$value.style.backgroundColor}};">{{$value.ID + 1}}</span>
               </div>
               {{/each}}
             </div>
@@ -72,8 +76,7 @@
               {{each points.rightPoints}}
               <div data-v-35736a9c="" class="points" style="top: {{$value.style.top}}; left: {{$value.style.left}};">
                 <span data-v-35736a9c="" class="defect-point"
-                  style="background-color: {{$value.style.backgroundColor}};"></span><span style="font-weight: 400;"
-                  data-v-35736a9c="">{{$value.ID + 1}}</span>
+                  style="background-color: {{$value.style.backgroundColor}};">{{$value.ID + 1}}</span>
               </div>
               {{/each}}
             </div>
@@ -84,45 +87,14 @@
               {{each points.rearPoints}}
               <div data-v-35736a9c="" class="points" style="top: {{$value.style.top}}; left: {{$value.style.left}};">
                 <span data-v-35736a9c="" class="defect-point"
-                  style="background-color: {{$value.style.backgroundColor}};"></span><span style="font-weight: 400;"
-                  data-v-35736a9c="">{{$value.ID + 1}}</span>
+                  style="background-color: {{$value.style.backgroundColor}};">{{$value.ID + 1}}</span>
               </div>
               {{/each}}
             </div>
           </div>
         </div>
       </div>
-      <table data-v-35736a9c="" class="table2" style="margin-bottom: 0; margin-top: 17px;">
-        <tr data-v-35736a9c="">
-          <td data-v-35736a9c="" class="itemName2 itemPart2">缺陷总数</td>
-          <td data-v-35736a9c="" colspan="3" id="defects" class="itemContent">{{TotalDefects}}</td>
-        </tr>
-        <tr data-v-35736a9c="">
-          <td data-v-35736a9c="" colspan="4" class="itemName itemPart2 itemComponent">部件</td>
-        </tr>
-        {{each Parts}}
-        {{if $index % 2 === 0}}
-        <tr data-v-35736a9c="">
-          <td data-v-35736a9c="" class="itemName2 itemPart2">{{Parts[$index].Name}}</td>
-          <td data-v-35736a9c="" class="itemContent">{{Parts[$index].Defects}}</td>
-          {{if $index + 2 <= Parts.length}} <td data-v-35736a9c="" class="itemName2">{{Parts[$index + 1].Name}}</td>
-            <td data-v-35736a9c="" class="itemContent">{{Parts[$index + 1].Defects}}</td>
-            {{else}}
-            <td data-v-35736a9c="" class="itemName2"></td>
-            <td data-v-35736a9c="" class="itemContent"></td>
-            {{/if}}
-        </tr>
-        {{/if}}
-        {{/each}}
-        <% for(var i=Parts.length + 1 ; i < 16 ; i +=2) { %>
-          <tr data-v-35736a9c="">
-            <td data-v-35736a9c="" class="itemName2 itemPart2"></td>
-            <td data-v-35736a9c="" class="itemContent"></td>
-            <td data-v-35736a9c="" class="itemName2"></td>
-            <td data-v-35736a9c="" class="itemContent"></td>
-          </tr>
-          <% } %>
-      </table>
+
     </main>
   </div>
   <div data-v-35736a9c="" id="detectionReport" class="report-pdf" style="margin-top: 30px;">
@@ -136,6 +108,37 @@
         </div>
       </header>
       <div data-v-35736a9c="" id="reportTitleCn" class="reportTitle">检测报告</div>
+      <table data-v-35736a9c="" class="table2" style=" margin-top: 17px 0;">
+        <tr data-v-35736a9c="">
+          <td data-v-35736a9c="" class="itemName2 itemPart2">缺陷总数</td>
+          <td data-v-35736a9c="" colspan="3" id="defects" class="itemContent">{{TotalDefects}}</td>
+        </tr>
+        <tr data-v-35736a9c="">
+          <td data-v-35736a9c="" colspan="4" class="itemName itemPart2 itemComponent">部件</td>
+        </tr>
+        {{each Parts}}
+        {{if $index % 2 === 0}}
+        <tr data-v-35736a9c="">
+          <td data-v-35736a9c="" class="itemName2 itemPart2">{{Parts[$index].Name}}</td>
+          <td data-v-35736a9c="" class="itemContent">{{Parts[$index].Defects}}</td>
+          {{if $index + 2 <= Parts.length}} <td data-v-35736a9c="" class="itemName2">{{Parts[$index + 1].Name}}</td>
+          <td data-v-35736a9c="" class="itemContent">{{Parts[$index + 1].Defects}}</td>
+          {{else}}
+          <td data-v-35736a9c="" class="itemName2"></td>
+          <td data-v-35736a9c="" class="itemContent"></td>
+          {{/if}}
+        </tr>
+        {{/if}}
+        {{/each}}
+        <% for(var i=Parts.length + 1 ; i < 16 ; i +=2) { %>
+        <tr data-v-35736a9c="">
+          <td data-v-35736a9c="" class="itemName2 itemPart2"></td>
+          <td data-v-35736a9c="" class="itemContent"></td>
+          <td data-v-35736a9c="" class="itemName2"></td>
+          <td data-v-35736a9c="" class="itemContent"></td>
+        </tr>
+        <% } %>
+      </table>
       <table data-v-35736a9c="" class="tableAbove">
         <tr data-v-35736a9c="">
           <td data-v-35736a9c="" colspan="4" class="itemName itemComponent">区域</td>
@@ -157,7 +160,7 @@
           {{/each}}
         </div>
       </table>
-      <table data-v-35736a9c="" class="tableAbove" style="margin-top: 27px;">
+      <table data-v-35736a9c="" class="tableAbove" >
         <tr data-v-35736a9c="">
           <td data-v-35736a9c="" colspan="4" class="itemName itemComponent">等级</td>
         </tr>
@@ -178,7 +181,7 @@
           {{/each}}
         </div>
       </table>
-      <div data-v-35736a9c="" id="defectsDetailsTablePage2" class="tableBelowWrapper" style="margin-top: 27px;">
+      <div data-v-35736a9c="" id="defectsDetailsTablePage2" class="tableBelowWrapper">
         <div data-v-35736a9c="" class="tableBelow">
           <div data-v-35736a9c="" class="tableTitle zh-id">ID</div>
           <div data-v-35736a9c="" class="reflectance tableTitle">2D</div>
@@ -192,7 +195,7 @@
         </div>
         <div data-v-35736a9c="">
           {{each Pictures}}
-          {{if $index < 7}} <div data-v-35736a9c="" class="defectDetailsItem">
+          {{if $index < 2}} <div data-v-35736a9c="" class="defectDetailsItem">
             <div data-v-35736a9c="" class="tableItem zh-id">{{$index + 1}}</div>
             <div data-v-35736a9c="" class="shape tableItem"><img data-v-35736a9c="" src="{{$value.Shape}}"
               alt="" class="picture"></div>
@@ -222,15 +225,15 @@
   </main>
   </div>
 
-  <% for(var i=7 ; i < Pictures.length; i++) { %>
-    <% if ((i - 7) % 11===0) { %>
+  <% for(var i=2 ; i < Pictures.length; i++) { %>
+    <% if ((i - 2) % 11===0) { %>
       <div data-v-35736a9c="" id="detectionReport" class="report-pdf" style="margin-top: 30px;">
         <main data-v-35736a9c="" class="mainPage">
           <header data-v-35736a9c="" class="headerPage"><img data-v-35736a9c="" src="img/pic_report_logo.26c5a2a1.png"
               alt="logo" class="logo">
             <div class="pageNum">
               <span class="nowPage" style="color: #0077d7;">
-                <%=3 + (i-7) / 11%>
+                <%=3 + (i-2) / 11%>
               </span>/<span class="allPage">
                 <%=pageNum%>
               </span>

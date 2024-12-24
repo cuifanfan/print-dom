@@ -197,7 +197,7 @@ function getSpecularDetectionReportTemplate(app, url) {
     app.post(url, (request, response) => {
     try {
         const data = request.body;
-        data.pageNum = 2 + Math.ceil((data.Pictures.length - 7) / 11); // PDF总页数
+        data.pageNum = 2 + Math.ceil((data.Pictures.length - 2) / 11); // PDF总页数
         const specularDetectionReportHTML = renderTemplateHTML(
             `./accuAnalyzer/specularDetection/digitalAnalysis/reportTemplate.html`,
             `./accuAnalyzer/specularDetection/digitalAnalysis/reportTemplate.css`,
