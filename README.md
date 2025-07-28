@@ -142,7 +142,7 @@ pkg .\pdfgenerator.js -t win -o pdfgenerator
 
 ### 方案1：
 
-![image-20231205155901188](./designDoc/images/one.png)
+
 
 ```js
 import {pdfDownload, getHTMLStr} from '@/common/utils/fileExport';
@@ -173,7 +173,7 @@ async exportReport() {
 
 ### 方案2：
 
-![image-20231205160029930](./designDoc/images/two.png)
+
 
 ```js
 import {pdfDownload, getHTMLStr} from '@/common/utils/fileExport';
